@@ -5,6 +5,7 @@ radio.onReceivedValue(function (name, value) {
 })
 let x = 0
 radio.setGroup(27)
+datalogger.setColumnTitles("x")
 basic.forever(function () {
-    serial.writeValue("x", x)
+    datalogger.log(datalogger.createCV("x", x))
 })
